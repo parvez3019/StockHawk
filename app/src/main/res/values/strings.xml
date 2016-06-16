@@ -10,9 +10,13 @@
     <string name="input_hint" translatable="false" >FB</string>
     <string name="input_prefill" translatable="false" ></string>
     <string name="network_toast" translatable="false" >Uh-oh! This app requires an internet connection</string>
+    <string name="stock_already_saved_toast" translatable="false">This stock is already saved!</string>
 
     <string name="string_symbol" translatable="false">symbol</string>
     <string name="string_background_resource" translatable="false">setBackgroundResource</string>
+    <string name="string_tag" translatable="false">tag</string>
+    <string name="string_init" translatable="false">init</string>
+    <string name="string_add" translatable="false">add</string>
 
     <!--Content description-->
     <string name="detail_activity_description" translatable="false">Stock detail</string>

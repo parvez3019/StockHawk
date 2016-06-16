@@ -7,4 +7,9 @@
 
   <!--chart axis-->
   <color name="axis_label_color">#6a84c3</color>
+  <color name="axis_color">#F5F5F5</color>
+
+  <!--line chart color-->
+  <color name="line_color">#758cbb</color>
+  <color name="fill_color">#2d374c</color>
 </resources>

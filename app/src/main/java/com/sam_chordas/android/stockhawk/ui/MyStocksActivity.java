@@ -69,7 +69,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     mServiceIntent = new Intent(this, StockIntentService.class);
     if (savedInstanceState == null){
       // Run the initialize task service so that some stocks appear upon an empty database
-      mServiceIntent.putExtra("tag", "init");
+      mServiceIntent.putExtra(getString(R.string.string_tag), getString(R.string.string_init));
       if (isConnected){
         startService(mServiceIntent);
       } else{
@@ -88,7 +88,8 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                 // Launch Detail activity
                 Intent intent = new Intent(mContext, StockDetailActivity.class);
                 mCursor.moveToPosition(position);
-                intent.putExtra("symbol",mCursor.getString(mCursor.getColumnIndex("symbol")));
+                intent.putExtra(getString(R.string.string_symbol),
+                        mCursor.getString(mCursor.getColumnIndex(getString(R.string.string_symbol))));
                 mContext.startActivity(intent);
 
 
@@ -114,15 +115,16 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                       new String[] { input.toString() }, null);
                   if (c.getCount() != 0) {
                     Toast toast =
-                        Toast.makeText(MyStocksActivity.this, "This stock is already saved!",
+                        Toast.makeText(MyStocksActivity.this,getString(R.string.stock_already_saved_toast),
                             Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.CENTER, Gravity.CENTER, 0);
                     toast.show();
                     return;
                   } else {
                     // Add the stock to DB
-                    mServiceIntent.putExtra("tag", "add");
-                    mServiceIntent.putExtra("symbol", input.toString());
+                    mServiceIntent.putExtra(getString(R.string.string_tag), getString(R.string.string_add));
+                    mServiceIntent.putExtra(getString(R.string.string_symbol)
+                            , input.toString());
                     startService(mServiceIntent);
                   }
                 }

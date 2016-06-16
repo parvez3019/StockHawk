@@ -11,8 +11,10 @@ import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.DataSetObserver;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.ColorRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
@@ -47,7 +49,7 @@ public class StockDetailActivity extends AppCompatActivity implements
         lineChartView = (LineChartView) findViewById(R.id.linechart);
         Intent in = getIntent();
         Bundle args = new Bundle();
-        args.putString("symbol", in.getStringExtra("symbol"));
+        args.putString(getString(R.string.string_symbol), in.getStringExtra(getString(R.string.string_symbol)));
         getLoaderManager().initLoader(CURSER_LOADER_ID, args, this);
     }
 
@@ -55,8 +57,9 @@ public class StockDetailActivity extends AppCompatActivity implements
         lineChartView.setBorderSpacing(Tools.fromDpToPx(15))
                 .setYLabels(AxisController.LabelPosition.OUTSIDE)
                 .setXLabels(AxisController.LabelPosition.NONE)
-                .setLabelsColor(Color.parseColor("#6a84c3"))
+                .setLabelsColor(getResources().getColor(R.color.axis_label_color))
                 .setXAxis(true)
+                .setAxisColor(getResources().getColor(R.color.axis_color))
                 .setYAxis(true)
                 .setAxisBorderValues(Math.round(Math.max(0f, min - 5f)), Math.round(max + 5f));
     }
@@ -67,7 +70,7 @@ public class StockDetailActivity extends AppCompatActivity implements
                 QuoteProvider.Quotes.CONTENT_URI,
                 new String[]{QuoteColumns.BIDPRICE},
                 QuoteColumns.SYMBOL + "= ?",
-                new String[]{args.getString("symbol")},
+                new String[]{args.getString(getString(R.string.string_symbol))},
                 null);
     }
 
@@ -86,8 +89,8 @@ public class StockDetailActivity extends AppCompatActivity implements
             lineSet.addPoint("" , stock_price);
             mCursor.moveToNext();
         }
-        lineSet.setColor(Color.parseColor("#758cbb"))
-                .setFill(Color.parseColor("#2d374c"))
+        lineSet.setColor(getResources().getColor(R.color.line_color))
+                .setFill(getResources().getColor(R.color.fill_color))
                 .setThickness(1);
 
         lineChartView.addData(lineSet);
