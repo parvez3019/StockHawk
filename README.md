@@ -29,6 +29,7 @@ Stock Hawk displays a default text on screen when offline, to inform users that 
 
 ###Screenshots
 
-![device-2016-06-16-022034](https://cloud.githubusercontent.com/assets/10362597/16097277/abce9902-336a-11e6-87c6-a746e703a81d.png)
-![device-2016-06-16-022110](https://cloud.githubusercontent.com/assets/10362597/16097279/ac82f262-336a-11e6-98b6-eee561209382.png)
-![device-2016-06-16-022208](https://cloud.githubusercontent.com/assets/10362597/16097280/ace642fe-336a-11e6-9ad5-41acaa5f28a4.png)
+![screenshot1](https://cloud.githubusercontent.com/assets/10362597/16149414/39e87fc0-34ae-11e6-947b-815bb862c292.png)
+![screenshot from 2016-06-17 17 03 03](https://cloud.githubusercontent.com/assets/10362597/16149415/3a5a0e24-34ae-11e6-9015-09bc0e1ce11a.png)
+![screenshot from 2016-06-17 17 03 11](https://cloud.githubusercontent.com/assets/10362597/16149417/3a7ffa76-34ae-11e6-80c4-522d646fab25.png)
+![screenshot from 2016-06-17 17 03 33](https://cloud.githubusercontent.com/assets/10362597/16149416/3a649e5c-34ae-11e6-9378-d8e7715af582.png)
